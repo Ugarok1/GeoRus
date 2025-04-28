@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>🇷🇺 Site Russie 🇷🇺</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a8e6cf, #dcedc1); /* Фон с градиентом */
+            color: #333;
+            font-size: 140%;
+            line-height: 1.6;
+        }
+
+        /* menu */
+        .menu-icon {
+            font-size: 36px;
+            cursor: pointer;
+            padding: 15px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .menu-icon:hover {
+            color: #007bff;
+        }
+
+        /* sidebar */
+        .sidebar {
+            height: 90%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #e3eebe; /* Более насыщенный зеленый */
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar a {
+            padding: 12px 25px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: 0.2s;
+            font-weight: bold;
+        }
+
+        .sidebar a:hover {
+            background-color: #218838;
+            transform: translateX(5px);
+        }
+
+        .sidebar a span {
+            font-weight: normal;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 15px;
+            margin-left: 3px;
+        }
+
+        /* main content */
+        .main {
+            margin-left: 0;
+            padding: 30px;
+            transition: margin-left 0.3s;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            margin: 20px;
+        }
+
+        .main h1 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .main p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px; /* Добавим отступ между абзацами */
+        }
+
+        .main img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Segoe+UI:wght@400;700&display=swap">
+</head>
+<body>
+
+<div class="menu-icon" onclick="openSidebar()">☰</div>
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">✖ Fermer</a>
+    <a href="#" onclick="showContent('1')">🏠 Accueil</a>
+    <a href="#" onclick="showContent('2')"><span style="color: #dc3545;">🗺️ Territoriale</span></a>
+    <a href="#" onclick="showContent('3')"><span style="color: #28a745;">⛰️ Relief</span></a>
+    <a href="#" onclick="showContent('4')"><span style="color: #28a745;">🌊 Hydrographie</span></a>
+    <a href="#" onclick="showContent('5')"><span style="color: #ffc107;">☀️ Climat</span></a>
+    <a href="#" onclick="showContent('6')"><span style="color: #dc3545;">⛏️ Sol et sous-sol</span></a>
+    <a href="#" onclick="showContent('7')"><span style="color: #dc3545;">📤 Export</span></a>
+    <a href="#" onclick="showContent('8')"><span style="color: #dc3545;">📥 Import</span></a>
+    <a href="#" onclick="showContent('9')"><span style="color: #28a745;">🔄 Substitution</span></a>
+    <a href="#" onclick="showContent('10')"><span style="color: #ffc107;">🚚 Réacheminement</span></a>
+    <a href="#" onclick="showContent('11')"><span style="color: #28a745;">🏛️ Politique interne</span></a>
+    <a href="#" onclick="showContent('12')"><span style="color: #28a745;">🇷🇺 La Partie</span></a>
+    <a href="#" onclick="showContent('13')"><span style="color: #dc3545;">🌍 Politique étrangère</span></a>
+    <a href="#" onclick="showContent('14')"><span style="color: #28a745;">📰 l'État et médias</span></a>
+    <a href="#" onclick="showContent('15')"><span style="color: #28a745;">🏢 VK company</span></a>
+    <a href="#" onclick="showContent('16')"><span style="color: #28a745;">📚 Éducation</span></a>
+</div>
+
+<div id="mainContent" class="main">
+    <h1>🏠 Accueil</h1>
+    <h1>La Russie. 🇷🇺</h1>
+    <p>Bonjour à tous ! 👋 Sur ce site, vous allez découvrir la Russie et tenter de répondre à la question suivante : "Peut-on qualifier la Russie comme grande puissance mondiale ?" 🤔</p>
+    <p>J'ai divisé les sujets en <span style="color: #dc3545; font-weight: bold;">importants</span> 🔴, <span style="color: #ffc107; font-weight: bold;">moins-importants</span> 🟡 et <span style="color: #28a745; font-weight: bold;">pas-très-importants</span> 🟢.</p>
+    <p>Pour choisir un sujet, veuillez cliquer sur le bouton de menu (les trois points en haut à gauche) et sélectionner le thème qui vous intéresse. 🖱️</p>
+</div>
+
+<script>
+    function openSidebar() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.querySelector(".main").style.marginLeft = "250px";
+    }
+
+    function closeSidebar() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.querySelector(".main").style.marginLeft = "0";
+    }
+
+    function showContent(type) {
+        const main = document.getElementById("mainContent");
+
+        if (type === '1') {
+            main.innerHTML = `
+                <h1>🏠 Accueil</h1>
+                <h1>La Russie. 🇷🇺</h1>
+                <p>Bonjour à tous ! 👋 Sur ce site, vous allez découvrir la Russie et tenter de répondre à la question suivante : "Peut-on qualifier la Russie comme grande puissance mondiale ?" 🤔</p>
+                <p>J'ai divisé les sujets en <span style="color: #dc3545; font-weight: bold;">importants</span> 🔴, <span style="color: #ffc107; font-weight: bold;">moins-importants</span> 🟡 et <span style="color: #28a745; font-weight: bold;">pas-très-importants</span> 🟢.</p>
+                <p>Pour choisir un sujet, veuillez cliquer sur le bouton de menu (les trois points en haut à gauche) et sélectionner le thème qui vous intéresse. 🖱️</p>
+            `;
+        } else if (type === '2') {
+            main.innerHTML = `
+                <h1>🗺️ Territoriale</h1>
+                <img src="pictures/teritoriale.png" alt="here need to be image, sadly BUGGED">
+                <p>La Russie 🇷🇺, plus grand pays du monde (17 075 200 km²), s'étend sur l'Europe et l'Asie. Sa capitale est Moscou. 🏙️</p>
+                <p>Elle partage des frontières avec le Kazakhstan 🇰🇿, la Chine 🇨🇳, la Mongolie 🇲🇳, l'Ukraine 🇺🇦, la Finlande 🇫🇮, la Biélorussie 🇧🇾, la Géorgie 🇬🇪, l'Estonie 🇪🇪, l'Azerbaïdjan 🇦🇿, la Lituanie 🇱🇹, la Lettonie 🇱🇻, la Pologne 🇵🇱, la Norvège 🇳🇴 et la Corée du Nord 🇰🇵.</p>
+            `;
+        } else if (type === '3') {
+            main.innerHTML = `
+                <h1>⛰️ Relief</h1>
+                <img src="pictures/relief.jpg" alt="here need to be image, sadly BUGGED" style="width: 60%; height: auto;">
+                <p>Le relief de la Russie est extrêmement varié 🏞️ en raison de l'immensité de son territoire. On y trouve de vastes plaines comme la plaine d'Europe orientale et la plaine de Sibérie occidentale, entrecoupées de systèmes montagneux imposants.</p>
+                <p>À l'ouest, les monts Oural 🏔️ marquent une frontière naturelle entre l'Europe et l'Asie. Au sud, s'élèvent les majestueuses montagnes du Caucase 🏔️🏔️, abritant le point culminant de la Russie, le mont Elbrouz. L'Extrême-Orient russe est caractérisé par des chaînes de montagnes volcaniques et des plateaux. Cette diversité topographique influence considérablement le climat et la biodiversité du pays 🐻🌲.</p>
+            `;
+        } else if (type === '4') {
+            main.innerHTML = `
+                <h1>🌊 Hydrographie</h1>
+                <img src="pictures/relief.jpg" alt="here need to be image, sadly BUGGED" style="width: 60%; height: auto;">
+                <p>L'hydrographie de la Russie est marquée par la présence de nombreuses mers ⚓ qui bordent son vaste territoire, notamment la mer Blanche, la mer de Kara, la mer Noire, la mer Caspienne et la mer du Japon. Ces étendues maritimes jouent un rôle crucial dans le climat et l'économie du pays 🚢.</p>
+                <p>De plus, un réseau fluvial étendu traverse la Russie, avec des fleuves importants comme la Volga 🏞️, essentielle pour le transport, l'irrigation et la production d'énergie ⚡. Des canaux artificiels 🌉 ont également été construits pour faciliter la navigation et le transport maritime à l'intérieur du pays, connectant ainsi différentes régions et bassins hydrographiques.</p>
+            `;
+        } else if (type === '5') {
+            main.innerHTML = `
+                <h1>☀️ Climat</h1>
+                <img src="pictures/426896.jpg" alt="here need to be image, sadly BUGGED">
+                <p>Le climat de la Russie est très varié 🌡️ en raison de son immense territoire. On observe principalement un climat continental, caractérisé par de grands écarts de température entre l'été et l'hiver, avec des hivers longs et froids et des étés relativement courts et chauds, surtout dans les régions du centre et du sud.</p>
+                <p>Le nord de la Russie connaît un climat subarctique et arctique avec des hivers extrêmement rigoureux ❄️. L'influence des océans Atlantique et Pacifique se fait sentir, mais elle est limitée par la taille du continent. Les précipitations sont généralement modérées 🌧️, avec des variations selon les régions.</p>
+            `;
+        } else if (type === '6') {
+            main.innerHTML = `
+                <h1>⛏️ Sol et sous-sol</h1>
+                <img src="pictures/soussol.png" alt="here need to be image, sadly BUGGED">
+                <p>La Russie est extrêmement riche en ressources souterraines 💎. Son sous-sol recèle d'importantes réserves de pétrole 🛢️ et de gaz naturel 🔥, ce qui en fait un acteur majeur sur le marché mondial de l'énergie.</p>
+                <p>On y trouve également de vastes gisements de charbon ⚫, de minerais de fer, d'aluminium, de cuivre, de nickel, de platine, d'or 🥇 et de nombreux autres minéraux précieux. Ces ressources jouent un rôle crucial dans l'économie du pays et son développement industriel 🏭.</p>
+            `;
+        } else if (type === '7') {
+            main.innerHTML = `
+                <h1>📤 Export</h1>
+                <img src="pictures/export.png" alt="here need to be image, sadly BUGGED" style="width: 60%; height: auto;">
+                <p>En 2024, malgré un contexte de sanctions internationales accrues 🚫 ciblant notamment les secteurs financier et énergétique, la Russie a démontré une capacité de réorientation de ses flux d'exportation 🔄. Le secteur énergétique (pétrole et gaz) ⛽, pilier traditionnel des exportations, a su rediriger une part significative de ses volumes vers les marchés asiatiques, en particulier l'Inde 🇮🇳 et la Chine 🇨🇳, à travers des accords stratégiques. Cependant, le plafonnement des prix du pétrole et la réduction des exportations de gaz vers l'Europe ont eu un impact notable sur les revenus 📉.</p>
+                <p>Le secteur industriel a été confronté à des défis majeurs liés aux restrictions technologiques et aux perturbations des chaînes d'approvisionnement ⚙️, affectant notamment l'automobile 🚗. Néanmoins, certains segments comme l'industrie de la défense 🛡️ ont connu une croissance 📈. L'agriculture a maintenu une performance solide, permettant à la Russie de rester un exportateur clé de céréales 🌾. En parallèle à ces dynamiques sectorielles, une réorientation géographique des exportations vers l'Asie est devenue une tendance marquante en 2024, cherchant à compenser la contraction des échanges avec l'Europe due aux sanctions. Cette adaptation stratégique a été cruciale pour maintenir un certain niveau d'activité économique dans un environnement international complexe 🌍.</p>
+            `;
+        } else if (type === '8') {
+            main.innerHTML = `
+                <h1>📥 Import</h1>
+                <img src="pictures/import.png" alt="here need to be image, sadly BUGGED" style="width: 60%; height: auto;">
+                <p>L'économie russe en 2024 a fait face à une adaptation complexe aux sanctions internationales 🚫 (financier : gel d'actifs, SWIFT; énergétique : embargo partiel, plafonnement; techno; commercial). Malgré la réorientation des exportations énergétiques (pétrole, gaz) ⛽ vers l'Asie (Chine 🇨🇳, Inde 🇮🇳) via des accords (Rosneft, Gazprom), le secteur a subi le plafonnement et la baisse des ventes de gaz en Europe. L'industrie a lutté contre les ruptures d'approvisionnement et le départ d'entreprises (automobile 🚗 malgré relance nationale/chinoise), avec une croissance dans la défense 🛡️ et des efforts de substitution 🔄.</p>
+                <p>L'agriculture a bien performé (exportations de céréales 🌾). Les services ont été touchés par la baisse de consommation et le départ d'entreprises. Le secteur financier a maintenu une stabilité relative (contrôles, alternatives SWIFT) mais avec un accès limité aux marchés internationaux. En résumé, 2024 a été une année de réorientation économique sous forte pression des sanctions 🌍.</p>
+            `;
+        } else if (type === '9') {
+            main.innerHTML = `
+                <h1>🔄 Substitution</h1>
+                <p>La substitution des importations en Russie aujourd'hui est une réponse au départ des entreprises étrangères et aux sanctions 🚫. Les producteurs russes remplacent activement les importations dans divers secteurs, de l'alimentation à la technologie ⚙️. Dans l'informatique 💻, environ 50 % de substitution a été atteinte pour les principaux produits logiciels. La production industrielle a augmenté de 4,4 % au premier semestre 2024, en particulier dans les produits métalliques (+36,1 %), l'électronique (+35 %) et l'automobile (+27,4 %). Les succès sont importants dans le secteur agro-industriel 🌾 et la chimie 🧪, tandis que la dépendance reste plus élevée dans les domaines pharmaceutique 💊 et médical 🩺.</p>
+                <p>La part des importations diminue, tandis que la part des pays BRICS augmente (jusqu'à 45-55 % en 2024). Cependant, la qualité des produits nationaux ne correspond pas toujours aux analogues étrangers, et l'assortiment peut être limité. La substitution des importations stimule la production intérieure et l'emploi, mais peut entraîner une hausse des prix en raison du manque de concurrence et de la dépendance aux composants importés.</p>
+            `;
+        } else  if (type === '10') {
+            main.innerHTML = `
+                <h1>🚚 Réacheminement</h1>
+                <p>Le réacheminement des routes commerciales russes après les sanctions s'est traduit par un virage brusque vers l'Est et le Sud 🌍. La Chine 🇨🇳 est devenue le principal partenaire commercial, et en 2023, la part de la Chine dans les importations russes a atteint 39 %, et dans les exportations - 31 %. Le chiffre d'affaires commercial entre les deux pays a augmenté de 30 % en 2022, dépassant les 190 milliards de dollars.</p>
+                <p>Le chiffre d'affaires commercial de la Russie avec l'Inde 🇮🇳 a été multiplié par 3,4 entre janvier et novembre 2022 par rapport à 2021. Les exportations russes vers l'Inde ont augmenté de 8,4 % en 2024, atteignant 65,7 milliards de dollars, bien que les importations en provenance de l'Inde aient diminué de 14 % pour s'établir à 1,9 milliard de dollars en raison de problèmes de logistique et de paiement.</p>
+                <p>Malgré une augmentation initiale significative du chiffre d'affaires commercial avec la Turquie 🇹🇷 de 84 % en 2022, une baisse de 7,6 % a été observée sur les 11 mois de 2024 en raison des sanctions occidentales. Néanmoins, la Turquie reste un partenaire important et une plaque tournante logistique 🚚.</p>
+                <p>Une intensification du commerce est également notée avec les pays de la CEI. Par exemple, le chiffre d'affaires commercial de la Russie avec l'Azerbaïdjan 🇦🇿 a augmenté de 10,1 % en 2024, atteignant 4,8 milliards de dollars. Le chiffre d'affaires commercial total de la Russie avec les pays d'Asie a augmenté de 5,4 % en 2024 et s'est élevé à 520,4 milliards de dollars. Le volume des importations parallèles en Russie pour la période 2022-2023 est estimé à plus de 70 milliards de dollars. La part des pays "non amicaux" dans les importations a diminué de 50 % en 2021 à 29 % en 2023.</p>
+            `;
+        } else if (type === '11') {
+            main.innerHTML = `
+                <h1>🏛️ Politique interne</h1>
+                <p>La politique intérieure de la Russie ces dernières années est caractérisée par un renforcement de la verticale du pouvoir et une centralisation de la prise de décision. Une orientation clé reste l'assurance de la stabilité du système politique, qui se manifeste par un contrôle strict des activités des forces d'opposition, des médias et des organisations non commerciales. La priorité est le renforcement de la souveraineté du pays dans tous les domaines, y compris l'informationnel et le culturel. 🛡️</p>
+                <p>La politique économique est axée sur la substitution des importations 🔄 et le développement de la production intérieure 🏭, en particulier dans les secteurs stratégiquement importants. L'État joue un rôle important dans l'économie, exerçant une gestion directe et un soutien aux grandes entreprises.</p>
+                <p>Dans le domaine de la sécurité, la priorité est donnée au renforcement de la capacité de défense du pays et à la lutte contre le terrorisme et l'extrémisme. Une réforme des structures de force et une augmentation des dépenses de défense sont en cours. ⚔️</p>
+                <p>La politique régionale vise à uniformiser le développement socio-économique des régions et à renforcer les liens verticaux entre le centre fédéral et les sujets de la fédération.</p>
+                <p>Un aspect important de la politique intérieure est la préservation des valeurs traditionnelles et l'éducation patriotique de la population, activement promues par le système éducatif 📚, les médias 📰 et les institutions culturelles 🎭.</p>
+            `;
+        } else if (type === '12') {
+            main.innerHTML = `
+                <h1>🇷🇺 La Partie</h1>
+                <img src="pictures/unis.jpg" alt="here need to be image, sadly BUGGED">
+                <p>"Russie Unie" – le principal parti politique de la Fédération de Russie, avec plus de 2,3 millions de membres et 324 sièges sur 450 à la Douma d'État (après les élections de 2021 avec 49,82 % des voix), contrôlant la majorité des parlements régionaux (60 à 70 % des sièges). Le parti soutient la ligne du président, prônant la stabilité et le développement, mettant en œuvre des projets nationaux (budget 2024 – plus de 3 000 milliards de roubles) dans les domaines de l'éducation 📚, de la santé ⚕️ et du soutien social (pension moyenne en 2024 – 22 000 roubles, capital maternité pour le deuxième enfant – 833 000 roubles), ainsi que la substitution des importations (objectif – 50 % de localisation d'ici 2030) et le renforcement de la défense (dépenses en 2024 – environ 6 % du PIB) 🛡️.</p>
+                <p>Malgré sa position dominante, "Russie Unie" est confrontée à une baisse de la confiance publique, comme en témoignent les sondages d'opinion et les mouvements de protestation provoqués par les difficultés socio-économiques et les mesures impopulaires telles que l'augmentation de l'âge de la retraite. Des scandales de corruption retentissants impliquant des fonctionnaires du parti minent régulièrement la réputation du pouvoir 🏛️. Le processus électoral est critiqué par les observateurs et l'opposition en raison de signalements d'irrégularités et d'un accès inégal aux ressources médiatiques 📰. La domination du parti affaiblit la concurrence politique et entrave le développement de forces politiques alternatives. La mise en œuvre des projets nationaux, malgré un financement important, n'est pas toujours efficace, avec des cas de détournement de fonds et de retards. Le problème des inégalités sociales dans le pays reste aigu, malgré les efforts du parti dans le domaine social. Ces facteurs façonnent une perception ambiguë des activités de "Russie Unie" au sein de la société.</p>
+            `;
+        } else if (type === '13') {
+            main.innerHTML = `
+                <h1>🌍 Politique étrangère</h1>
+                <p>La politique étrangère de la Russie ces dernières années est marquée par une affirmation croissante de ses intérêts sur la scène internationale et une remise en question de l'ordre mondial unipolaire. Une priorité essentielle est la défense de sa sphère d'influence, notamment dans l'espace post-soviétique, où elle cherche à contrer l'influence occidentale. 🤝</p>
+                <p>La relation avec les États-Unis 🇺🇸 et l'OTAN reste un point central de tension, caractérisé par une méfiance mutuelle et des désaccords sur de nombreux dossiers internationaux, notamment l'élargissement de l'OTAN et la situation en Ukraine 🇺🇦.</p>
+                <p>La Russie développe activement ses relations avec les pays non occidentaux, en particulier la Chine 🇨🇳, l'Inde 🇮🇳, les pays d'Afrique 🌍 et d'Amérique latine 🌎, dans le cadre d'une stratégie visant à construire un ordre mondial multipolaire. La participation et l'influence de la Russie au sein d'organisations comme les BRICS et l'OCS sont en croissance.</p>
+                <p>La diplomatie énergétique ⚡ reste un outil important de la politique étrangère russe, bien que son efficacité ait été affectée par les sanctions et les efforts européens pour diversifier leurs sources d'approvisionnement.</p>
+                <p>La Russie joue un rôle actif dans la résolution de conflits régionaux, comme en Syrie 🇸🇾, et cherche à se positionner comme un acteur incontournable dans les affaires internationales. 🕊️</p>
+                <p>La question des sanctions occidentales 🚫 est une préoccupation constante de la politique étrangère russe, qui cherche à atténuer leurs effets par la diversification de ses partenaires commerciaux et le développement de son économie intérieure 🇷🇺.</p>
+            `;
+        } else if (type === '14') {
+            main.innerHTML = `
+                <h1>📰 l'État et médias</h1>
+                <img src="pictures/yout.png" alt="here need to be image, sadly BUGGED">
+                <p>Roskomnadzor procède activement au blocage de diverses plateformes médiatiques et ressources internet en Russie. Parmi les plateformes ciblées, on retrouve des réseaux sociaux très populaires tels qu'Instagram, Facebook, TikTok et Discord, rendant leur accès difficile voire impossible pour les utilisateurs russes. 🚫 YouTube a également été soumis à des mesures de ralentissement significatives et est de facto sous le coup d'un blocage non officiel. Plus contraignant encore, le contournement de ces blocages est désormais interdit par la loi. 🔒</p>
+                <p>Depuis le 1er mars 2024, une loi est entrée en vigueur interdisant la diffusion sur le réseau d'informations faisant la promotion ou popularisant les moyens de contourner ces blocages. Roskomnadzor exige la suppression de tout contenu expliquant comment accéder aux sites bloqués et bloque également de manière proactive les services de VPN (réseaux privés virtuels) qui pourraient permettre un tel contournement. 🛡️ De plus, Roskomnadzor interdit aux médias de diffuser des contenus provenant d'organisations jugées "indésirables" par l'État et d'inclure des liens vers des matériaux émanant de ces mêmes organisations, limitant ainsi l'accès à des sources d'information alternatives. 📰</p>
+                <p>Il est important de noter que « Gazprom », une entreprise publique russe majeure dans le secteur de l'énergie, exerce un contrôle significatif sur une part importante des plateformes médiatiques russes les plus populaires. 🏢 L'ancien chef de Roskomnadzor, Alexandre Jarov, occupe d'ailleurs actuellement le poste de directeur général de « Gazprom-Media ». Cette situation met en lumière une interconnexion évidente entre les activités de Roskomnadzor en matière de blocage des médias et la mainmise de l'État sur l'espace médiatique par le biais d'entités comme « Gazprom ». 🔗 Ces différents facteurs indiquent clairement un renforcement du contrôle de l'État sur l'espace informationnel en Russie, avec des implications importantes pour la liberté d'expression et l'accès à l'information.</p>
+            `;
+        } else if (type === '15') {    /*<p></p>*/
+            main.innerHTML = `
+                <h1>🏢 VK company</h1>
+                <img src="pictures/vk.png" alt="here need to be image, sadly BUGGED">
+                <p>VK est le plus grand réseau social en Russie et dans la CEI (Communauté des États indépendants). 🥇 Cela signifie que la plateforme bénéficie de la plus large audience et exerce probablement une influence considérable sur l'espace informationnel de la région.</p>
+                <p>L'actionnaire principal de VK est la SA « MF Technologies ». 🏢 Il est intéressant de noter que « MF Technologies » est elle-même contrôlée par deux acteurs majeurs : « Gazprom-media » et la SA « SOGAZ ». 💼 Comme nous l'avons évoqué précédemment, « Gazprom-media » entretient des liens étroits avec l'État, ce qui souligne l'influence potentielle de l'État sur VK. La SA « SOGAZ » est une importante compagnie d'assurance, dont la participation à la structure de propriété pourrait également avoir des implications.</p>
+                <p>VK est une plateforme multifonctionnelle qui combine les caractéristiques d'un réseau social pour la communication et le partage d'informations, une messagerie pratique pour les conversations personnelles et de groupe, ainsi qu'une vaste plateforme pour héberger et visionner divers types de contenu. 📱 En outre, les utilisateurs ont accès à des services de musique en streaming, une large collection de vidéos, une variété de jeux et même des services destinés aux comptes professionnels et à la promotion d'entreprises. 🎶 🎬 🎮 💼 Cette diversité de fonctionnalités fait de VK un élément clé de la vie en ligne de millions d'utilisateurs dans la région.</p>
+            `;
+         } else if (type === '16') {    /*<p></p>*/
+            main.innerHTML = `
+                <h1>📚 Éducation</h1>
+                <img src="pictures/educ.png" alt="here need to be image, sadly BUGGED">
+                <p>Sferum est une plateforme éducative développée conjointement par VK et le Ministère de l'Éducation de la Fédération de Russie. 🤝 Cela souligne son statut officiel et son lien étroit avec le système éducatif étatique. Une caractéristique importante est son intégration avec la plateforme « Mon école », ce qui en fait partie d'un environnement éducatif unifié.</p>
+                <p>Il est intéressant de noter que, parallèlement au développement de Sferum, on observe un accès limité à certaines plateformes éducatives internationales telles que Zoom et Google Classroom. 🚫 Cela témoigne d'une volonté de privilégier l'utilisation des ressources éducatives nationales.</p>
+                <p>Certaines tendances se dégagent dans le développement de Sferum et du système éducatif russe en général. Parmi celles-ci figurent le développement actif de l'éducation patriotique, le renforcement du contrôle du contenu éducatif et un accent particulier sur les ressources éducatives nationales. 🇷🇺</p>
+                <p>Un aspect important est l'introduction de manuels d'État unifiés pour les matières clés. Une attention particulière est accordée aux manuels d'histoire et de sciences sociales, ce qui pourrait être lié à une volonté de former une certaine vision du monde chez les élèves. 📖</p>
+            `;
+        }
+    }
+</script>
+
+</body>
+</html>
+</body>
+</html>
