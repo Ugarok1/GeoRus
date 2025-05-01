@@ -125,6 +125,7 @@
     <a href="#" onclick="showContent('15')"><span style="color: #28a745;">🏢 VK company</span></a>
     <a href="#" onclick="showContent('16')"><span style="color: #28a745;">📚 Éducation</span></a>
     <a href="#" onclick="showContent('17')"><span style="color: #ffc107;">🏙️ Démographie</span></a>
+    <a href="#" onclick="showContent('18')"><span style="color: #ffc107;">🛡️ Forces armées</span></a>
 </div>
 
 <div id="mainContent" class="main">
@@ -156,6 +157,7 @@
                 <p>Bonjour à tous ! 👋 Sur ce site, vous allez découvrir la Russie et tenter de répondre à la question suivante : "Peut-on qualifier la Russie comme grande puissance mondiale ?" 🤔</p>
                 <p>J'ai divisé les sujets en <span style="color: #dc3545; font-weight: bold;">importants</span> 🔴, <span style="color: #ffc107; font-weight: bold;">moins-importants</span> 🟡 et <span style="color: #28a745; font-weight: bold;">pas-très-importants</span> 🟢.</p>
                 <p>Pour choisir un sujet, veuillez cliquer sur le bouton de menu (les trois points en haut à gauche) et sélectionner le thème qui vous intéresse. 🖱️</p>
+                <iframe width="560" height="315" src="https://youtu.be/IaJN0BJBmX0?si=QeFUWpPYACCfjrSa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             `;
         } else if (type === '2') {
             main.innerHTML = `
@@ -280,6 +282,13 @@
                 <p>Il est à noter qu'une part importante de la population russe préfère la vie urbaine — environ 75 % des citoyens vivent dans les villes. 🏙️ Ce niveau élevé d'urbanisation témoigne d'une infrastructure urbaine développée et d'une concentration des opportunités d'emploi et d'éducation dans les agglomérations urbaines.</p>
                 <p>Cependant, la situation démographique du pays est caractérisée par un faible taux de natalité, qui s'élevait à 8,9 pour mille (nombre de naissances pour mille habitants) en 2023. 📉 Afin de stimuler la natalité et de soutenir les jeunes familles, l'État prend diverses mesures, notamment des allocations à la naissance et d'autres programmes sociaux, en plus du capital maternel.</p>
                 <p>Parallèlement, la Russie connaît un taux de mortalité relativement élevé, atteignant 12,3 pour mille en 2023. 💀 Le dépassement du taux de mortalité par rapport au taux de natalité peut avoir un impact négatif sur la croissance naturelle de la population.</p>
+            `;
+        } else if (type === '18') {    /*<p></p>*/
+            main.innerHTML = `
+                <h1>🛡️ Forces armées</h1>
+                <p>L'armée russe, forte d'environ 1,1 million de personnels actifs et s'appuyant sur une réserve de 1,5 million d'individus 🛡️, constitue une force militaire majeure à l'échelle mondiale 🌍. Son organisation structurelle repose sur plusieurs branches essentielles, chacune avec des rôles spécifiques : les puissantes Forces terrestres , les Forces aérospatiales intégrant l'aviation  et les moyens spatiaux , la Marine assurant la projection de puissance maritime , les Forces de missiles stratégiques garantes de la dissuasion nucléaire, les agiles Troupes aéroportées et les Forces spéciales dédiées aux missions délicates 🕵️.</p>
+                <p>Sur le plan de l'équipement, l'armée russe déploie un arsenal moderne et diversifié. On y trouve des chars de combat avancés comme les T-72B3, T-80BVM et T-90M, des véhicules de combat d'infanterie tels que les BMP-2 et BMP-3, une aviation de pointe avec des chasseurs Su-30SM et Su-35S, des hélicoptères d'attaque tels que les Mi-28N et Ka-52, ainsi qu'un éventail de systèmes de missiles incluant les Iskander-M et les S-400 🚀.</p>
+                <p>Un pilier fondamental de la puissance stratégique russe est son armement nucléaire. Géré principalement par les Forces de missiles stratégiques, la Russie possède l'un des plus grands arsenaux nucléaires au monde. Cet arsenal comprend des missiles balistiques intercontinentaux (ICBM) basés à terre, des missiles balistiques lancés par sous-marins (SLBM) et des bombardiers stratégiques, assurant ainsi une capacité de dissuasion nucléaire crédible. ☢️</p>
             `;
         }
     }
